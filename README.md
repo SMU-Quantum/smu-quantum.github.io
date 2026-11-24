@@ -1,6 +1,6 @@
 # SMU Quantum
 
-The group website uses static HTML and CSS. Edit the research statement, selected papers and recent highlights in `index.html`. The main pages are `publications.html`, `research.html`, `people.html` and `news.html`. Research code and notebooks are listed in `software.html` and linked from Research. All pages use `styles.css`.
+The group website uses static HTML and CSS. Edit the research statement, research areas, selected papers and recent highlights in `index.html`. If you rename a research area, update it in both `index.html` and `research.html`. The main pages are `publications.html`, `research.html`, `people.html` and `news.html`. Research code and notebooks are listed in `software.html` and linked from Research. All pages use `styles.css`.
 
 Add papers to the appropriate year in `publications.html`. Set `data-authors` to the space-separated group member keys present in the byline (`lau`, `lee`, `sharma`). `publications.js` uses those keys for the author filter. The full list stays readable without JavaScript.
 

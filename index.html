@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400&amp;family=Oswald:wght@400;500;600&amp;display=swap">
-  <link rel="stylesheet" href="styles.css?v=191e199772">
+  <link rel="stylesheet" href="styles.css?v=52f2ac3000">
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -36,11 +36,12 @@
 
   <main id="main" tabindex="-1">
     <section class="hero" aria-labelledby="research-statement">
-      <div class="wrap">
+      <div class="hero-grid">
         <div class="hero-copy">
           <h1 id="research-statement">Quantum computing for decision-making</h1>
           <p>SMU Quantum is a research group in the School of Computing and Information Systems, led by Professor Hoong Chuin Lau. We study how to plan for supply disruptions, stock shortages and other risks, combining quantum computing, AI and operations research, and we test our methods against strong classical baselines.</p>
           <p class="research-principle"><q cite="https://ink.library.smu.edu.sg/sis_research/11419/">Quantum proposes, classical decides</q></p>
+          <p class="hero-actions"><a class="paper-button" href="research.html">Our research</a> <a href="people.html">Meet the team</a></p>
         </div>
         <figure class="hero-photo">
           <img src="assets/singapore-cargo-terminal.jpg" width="1280" height="701" alt="Container ships and gantry cranes at a Singapore cargo terminal">
@@ -49,7 +50,40 @@
       </div>
     </section>
 
-    <section id="publications" class="wrap section" aria-labelledby="publications-title">
+    <section class="wrap section" aria-labelledby="areas-title">
+      <div class="section-heading">
+        <h2 id="areas-title">Research areas</h2>
+        <a href="research.html">About our research</a>
+      </div>
+      <ul class="area-grid">
+        <li>
+          <h3><a href="research.html#risk-title">Risk and resilience</a></h3>
+          <p>Quantum sampling and amplitude estimation for rare, compound events in supply chains, disaster bonds and inventory.</p>
+        </li>
+        <li>
+          <h3><a href="research.html#algorithms-title">Constrained quantum optimisation</a></h3>
+          <p>Custom penalties, slack-free encodings and feasibility-preserving circuits for routing and knapsack problems.</p>
+        </li>
+        <li>
+          <h3><a href="research.html#adaptive-title">AI for hybrid solvers</a></h3>
+          <p>Learning to tune penalties, shrink problems and split work between quantum and classical solvers.</p>
+        </li>
+        <li>
+          <h3><a href="research.html#learning-title">Quantum reinforcement learning</a></h3>
+          <p>Symmetry-respecting circuits that learn routing policies on small instances and transfer to larger ones.</p>
+        </li>
+        <li>
+          <h3><a href="research.html#hardware-title">Hardware benchmarking and error mitigation</a></h3>
+          <p>Optimisation on real quantum processors, and ways to reduce the effect of noise on the results.</p>
+        </li>
+        <li>
+          <h3><a href="research.html#resources-title">Fault-tolerant resource estimates</a></h3>
+          <p>What future fault-tolerant machines would need for derivative pricing and factoring.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="publications" class="wrap section section-ruled" aria-labelledby="publications-title">
       <div class="section-heading">
         <h2 id="publications-title">Selected publications</h2>
         <a href="publications.html">View all publications</a>
