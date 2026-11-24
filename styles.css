@@ -137,12 +137,6 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--paper);
 }
 
-.hero-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr);
-  gap: clamp(1.75rem, 4.25vw, 4rem);
-}
-
 .hero-copy { padding-block: clamp(2.5rem, 5.15vw, 4.75rem); }
 
 .hero h1, .page-title h1 {
@@ -152,16 +146,13 @@ a:hover { text-decoration-thickness: 2px; }
   line-height: 1.03;
 }
 
-.hero h1 {
-  max-width: 20ch;
-  text-wrap: balance;
-}
+.hero h1 { text-wrap: balance; }
 
 .page-title { padding-block: clamp(1.75rem, 4vw, 3.25rem); }
 .reading-width { max-width: 51rem; }
 
 .hero-copy > p:first-of-type {
-  max-width: 47ch;
+  max-width: 70ch;
   margin-top: 1.3rem;
   color: #f0f1f7;
   font-size: clamp(1rem, 1.45vw, 1.125rem);
@@ -176,25 +167,19 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 .hero-photo {
-  position: relative;
-  align-self: stretch;
-  min-height: 19rem;
   background: var(--navy-deep);
 }
 
 .hero-photo img {
-  position: absolute;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: clamp(13rem, 29vw, 23rem);
   object-fit: cover;
   object-position: 50% 49%;
 }
 
 .hero-photo figcaption {
-  position: absolute;
-  inset: auto 0 0;
   padding: 0.5rem 0.75rem;
-  background: rgb(16 22 64 / 92%);
   color: #fff;
   font-size: 0.8125rem;
   line-height: 1.55;
@@ -245,6 +230,8 @@ h2 {
   font-weight: 550;
   line-height: 1.4;
 }
+
+.publication-meta strong { font-weight: 750; }
 
 .featured-paper h3 {
   max-width: 22ch;
@@ -494,8 +481,7 @@ h2 {
 }
 
 @media (max-width: 52rem) {
-  .hero-layout, .publication-layout { grid-template-columns: 1fr; }
-  .hero-layout { gap: 0; }
+  .publication-layout { grid-template-columns: 1fr; }
   .hero-copy { padding-bottom: 2.1rem; }
 
   .publication-year:not([hidden]) { grid-template-columns: minmax(0, 1fr); }
@@ -505,8 +491,6 @@ h2 {
   #publication-results { grid-column: 1 / -1; padding-block: 0; }
 
   .hero-photo {
-    min-height: auto;
-    aspect-ratio: 2 / 1;
     margin-inline: calc(-1 * clamp(1.15rem, 5vw, 5rem));
   }
 }
@@ -519,17 +503,7 @@ h2 {
 
   .hero h1, .page-title h1 { font-size: clamp(2rem, 9vw, 3.2rem); }
 
-  .hero-photo {
-    aspect-ratio: auto;
-    display: grid;
-  }
-
-  .hero-photo img {
-    position: static;
-    height: auto;
-  }
-
-  .hero-photo figcaption { position: static; }
+  .hero-photo img { height: auto; }
   .research-topics > section,
   .publication-year .publication-list,
   .publication-filters:not([hidden]),
