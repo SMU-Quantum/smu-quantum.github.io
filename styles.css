@@ -9,6 +9,7 @@
   --line: #d9dbe0;
   --paper: #fff;
   --warm-paper: #f6f3eb;
+  --cool-paper: #f4f5f8;
   --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
   --serif: Georgia, "Times New Roman", serif;
 }
@@ -317,6 +318,93 @@ h2 {
 
 .publication-list .authors { margin-top: 0.35rem; }
 
+.publication-filters:not([hidden]) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(11rem, 15rem) auto;
+  align-items: end;
+  gap: 0.8rem 1.25rem;
+  padding: clamp(1rem, 2.5vw, 1.65rem);
+  background: var(--cool-paper);
+  border-top: 2px solid var(--gold);
+}
+
+.publication-filters label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--navy);
+  font-weight: 650;
+  font-size: 0.875rem;
+}
+
+.publication-filters :is(input, select) {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #9da2b2;
+  border-radius: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  font: inherit;
+}
+
+.publication-filters select {
+  appearance: none;
+  padding-right: 2.25rem;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--navy) 50%),
+    linear-gradient(135deg, var(--navy) 50%, transparent 50%);
+  background-position: right 1.1rem center, right 0.8rem center;
+  background-size: 0.3rem 0.3rem;
+  background-repeat: no-repeat;
+}
+
+#publication-results {
+  min-width: 8.5rem;
+  padding-block: 0.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.publication-year:not([hidden]) {
+  display: grid;
+  grid-template-columns: clamp(5rem, 9vw, 8rem) minmax(0, 1fr);
+  gap: 0.5rem clamp(1rem, 3vw, 2.5rem);
+}
+
+.publication-year {
+  border-top: 1px solid var(--gold);
+  padding-top: 0.9rem;
+  margin-top: clamp(1.6rem, 4vw, 3rem);
+}
+
+.publication-year .publication-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(1.25rem, 3vw, 2.75rem);
+  border-top: 0;
+}
+
+.publication-year .publication-list li { padding-block: 0.8rem 1.2rem; }
+
+.publication-year li:target,
+.news-feature:target,
+.news-feed article:target {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  scroll-margin-top: 1rem;
+}
+
+.section-link { display: inline-block; margin-top: 1.25rem; }
+
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.35rem;
+  margin-top: 0.8rem;
+  padding: 0;
+  list-style: none;
+}
+
 .research-topics > section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
@@ -331,6 +419,48 @@ h2 {
 }
 
 .research-topics p { max-width: 65ch; }
+
+.highlights {
+  background: var(--cool-paper);
+  border-top: 1px solid var(--line);
+}
+
+.highlight-grid, .news-feed {
+  display: grid;
+  gap: 1.4rem clamp(1.3rem, 3.5vw, 3rem);
+}
+
+.highlight-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.news-feed { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 2rem; }
+
+.highlight-grid article, .news-feed article {
+  border-top: 1px solid var(--gold);
+  padding-top: 1rem;
+}
+
+.highlight-grid h3, .news-feed h2 {
+  font-size: clamp(1.12rem, 1.8vw, 1.35rem);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.highlight-grid :is(h3, h3 + p), .news-feed :is(h2, h2 + p), .news-feature h2 + p {
+  margin-top: 0.45rem;
+}
+
+.news-feature {
+  border-top: 3px solid var(--gold);
+  padding: clamp(1.3rem, 4vw, 2.7rem);
+  background: var(--warm-paper);
+}
+
+.news-feature h2 {
+  margin-top: 0.6rem;
+  font: 400 clamp(1.9rem, 3.3vw, 3rem)/1.1 var(--serif);
+}
+
+.news-feature > p { max-width: 70ch; }
 
 .directory {
   border-top: 1px solid var(--line);
@@ -368,6 +498,12 @@ h2 {
   .hero-layout { gap: 0; }
   .hero-copy { padding-bottom: 2.1rem; }
 
+  .publication-year:not([hidden]) { grid-template-columns: minmax(0, 1fr); }
+  .publication-filters:not([hidden]) {
+    grid-template-columns: minmax(0, 1fr) minmax(11rem, 15rem);
+  }
+  #publication-results { grid-column: 1 / -1; padding-block: 0; }
+
   .hero-photo {
     min-height: auto;
     aspect-ratio: 2 / 1;
@@ -394,10 +530,14 @@ h2 {
   }
 
   .hero-photo figcaption { position: static; }
-  .research-topics > section { grid-template-columns: 1fr; }
+  .research-topics > section,
+  .publication-year .publication-list,
+  .publication-filters:not([hidden]),
+  .highlight-grid, .news-feed { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (forced-colors: active) {
   .hero, .page-title, .site-footer { border-color: CanvasText; }
   .paper-button { border: 1px solid ButtonText; }
+  .publication-filters select { appearance: auto; }
 }

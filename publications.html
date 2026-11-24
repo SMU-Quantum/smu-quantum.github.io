@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#141c52">
   <title>Publications | SMU Quantum</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="publications.js" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -25,7 +26,7 @@
           <li><a href="publications.html" aria-current="page">Publications</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="people.html">People</a></li>
-          <li><a href="software.html">Software</a></li>
+          <li><a href="news.html">News</a></li>
         </ul>
       </nav>
     </div>
@@ -37,39 +38,182 @@
     </div>
 
     <div class="wrap section">
-      <ul class="publication-list reading-width">
-        <li id="resource-estimates">
-          <p class="publication-meta">Preprint · November 2026</p>
-          <h2><a href="https://arxiv.org/abs/2611.08907">Shared Lookups and Lazy Residues: Fewer Toffoli Gates for Factoring RSA-2048</a></h2>
-          <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
-        </li>
-        <li id="whitepaper">
-          <p class="publication-meta">SMU whitepaper · October 2026</p>
-          <h2><a href="https://ink.library.smu.edu.sg/sis_research/11419/">Quantum computing for modelling compound disruptions: Evidence from supply chains, disaster bonds and inventory planning</a></h2>
-          <p class="authors">Hoong Chuin Lau and Monit Sharma</p>
-        </li>
-        <li id="maritime">
-          <p class="publication-meta">Transportation Research Part E · October 2026</p>
-          <h2><a href="https://doi.org/10.1016/j.tre.2026.105296">Securing the flow: Strategic storage and corridor design for maritime energy security under chokepoint disruptions</a></h2>
-          <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
-        </li>
-        <li id="survey">
-          <p class="publication-meta">Survey preprint · October 2026</p>
-          <h2><a href="https://arxiv.org/abs/2610.11759">Beyond QAOA: A Review of AI and Quantum Computing for Adaptive Combinatorial Optimization</a></h2>
-          <p class="authors">Hoong Chuin Lau</p>
-        </li>
-        <li id="hardware">
-          <p class="publication-meta">Quantum Science and Technology · September 2026</p>
-          <h2><a href="https://arxiv.org/abs/2607.11637">From Circuits to Hardware: Benchmarking Standard and Qubit-Efficient Quantum Optimization on Real Hardware</a></h2>
-          <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
-        </li>
-        <li id="autoqresearch">
-          <p class="publication-meta">IEEE Quantum Week · September 2026</p>
-          <h2><a href="https://ink.library.smu.edu.sg/sis_research/11412/">AutoQResearch: LLM-Guided Closed-Loop Policy Search for Adaptive Variational Quantum Optimization</a></h2>
-          <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
-        </li>
-      </ul>
-      <a class="contact" href="https://github.com/SMU-Quantum#research">Earlier publications on GitHub</a>
+      <div class="publication-filters" id="publication-filters" hidden>
+        <div>
+          <label for="publication-search">Search publications</label>
+          <input id="publication-search" type="search" placeholder="Title, author, venue or year">
+        </div>
+        <div>
+          <label for="publication-author">Author</label>
+          <select id="publication-author">
+            <option value="">All authors</option>
+            <option value="lau">Hoong Chuin Lau</option>
+            <option value="lee">Lee Xin Wei</option>
+            <option value="sharma">Monit Sharma</option>
+          </select>
+        </div>
+        <p id="publication-results" role="status"></p>
+      </div>
+
+      <section class="publication-year" aria-labelledby="year-2026" data-publication-year="2026">
+        <h2 id="year-2026">2026</h2>
+        <ul class="publication-list">
+          <li id="resource-estimates" data-authors="sharma lau">
+            <p class="publication-meta">Preprint · November</p>
+            <h3><a href="https://arxiv.org/abs/2611.08907">Shared Lookups and Lazy Residues: Fewer Toffoli Gates for Factoring RSA-2048</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="derivative-pricing" data-authors="sharma lau">
+            <p class="publication-meta">Preprint · November</p>
+            <h3><a href="https://arxiv.org/abs/2611.04431">Reducing the arithmetic cost of quantum derivative pricing with language-model circuit design</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="whitepaper" data-authors="lau sharma">
+            <p class="publication-meta">SMU whitepaper · October</p>
+            <h3><a href="https://ink.library.smu.edu.sg/sis_research/11419/">Quantum computing for modelling compound disruptions: Evidence from supply chains, disaster bonds and inventory planning</a></h3>
+            <p class="authors">Hoong Chuin Lau and Monit Sharma</p>
+          </li>
+          <li id="maritime" data-authors="sharma lau">
+            <p class="publication-meta">Transportation Research Part E · October</p>
+            <h3><a href="https://doi.org/10.1016/j.tre.2026.105296">Securing the flow: Strategic storage and corridor design for maritime energy security under chokepoint disruptions</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="survey" data-authors="lau">
+            <p class="publication-meta">Survey preprint · October</p>
+            <h3><a href="https://arxiv.org/abs/2610.11759">Beyond QAOA: A Review of AI and Quantum Computing for Adaptive Combinatorial Optimization</a></h3>
+            <p class="authors">Hoong Chuin Lau</p>
+          </li>
+          <li id="penalty-qaoa" data-authors="lee lau">
+            <p class="publication-meta">Preprint · October</p>
+            <h3><a href="https://arxiv.org/abs/2610.04908">Custom Penalty QAOA via Walsh–Hadamard Transform</a></h3>
+            <p class="authors">Xin Wei Lee, Siong Thye Goh and Hoong Chuin Lau</p>
+          </li>
+          <li id="hardware" data-authors="sharma lau">
+            <p class="publication-meta">Quantum Science and Technology · September</p>
+            <h3><a href="https://arxiv.org/abs/2607.11637">From Circuits to Hardware: Benchmarking Standard and Qubit-Efficient Quantum Optimization on Real Hardware</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="autoqresearch" data-authors="sharma lau">
+            <p class="publication-meta">IEEE Quantum Week · September</p>
+            <h3><a href="https://ink.library.smu.edu.sg/sis_research/11412/">AutoQResearch: LLM-Guided Closed-Loop Policy Search for Adaptive Variational Quantum Optimization</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="virtual-distillation" data-authors="lee lau">
+            <p class="publication-meta">Preprint · August</p>
+            <h3><a href="https://arxiv.org/abs/2608.21342">Slepian Bounds on the Success Probability of Virtual Distillation</a></h3>
+            <p class="authors">Masayuki Ohzeki, Sasuke Kimata, Xinwei Lee and Hoong Chuin Lau</p>
+          </li>
+          <li id="cvar-penalties" data-authors="lee lau">
+            <p class="publication-meta">Preprint · April</p>
+            <h3><a href="https://arxiv.org/abs/2604.20088">CVaR-Assisted Custom Penalty Function for Constrained Optimization</a></h3>
+            <p class="authors">Xin Wei Lee and Hoong Chuin Lau</p>
+          </li>
+          <li id="qubit-scalable-routing" data-authors="sharma lau">
+            <p class="publication-meta">Preprint · April</p>
+            <h3><a href="https://arxiv.org/abs/2604.22194">Qubit-Scalable CVRP via Lagrangian Knapsack Decomposition and Noise-Aware Quantum Execution</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="light-cone" data-authors="lee lau">
+            <p class="publication-meta">Scientific Reports · February</p>
+            <h3><a href="https://doi.org/10.1038/s41598-025-31798-1">Light cone cancellation for variational quantum eigensolver in solving noisy Max-Cut</a></h3>
+            <p class="authors">Xinwei Lee, Xinjian Yan, Ningyi Xie, Yoshiyuki Saito, Leo Kurosawa, Nobuyoshi Asai, Dongsheng Cai and Hoong Chuin Lau</p>
+          </li>
+          <li id="learning-graph-shrinking" data-authors="sharma lau">
+            <p class="publication-meta">QC+AI proceedings</p>
+            <h3><a href="https://ink.library.smu.edu.sg/sis_research/11034/">Learning-Based Graph Shrinking for Quantum Optimization of Constrained Combinatorial Problems</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="adaptive-routing" data-authors="sharma lau">
+            <p class="publication-meta">QC+AI proceedings</p>
+            <h3><a href="https://ink.library.smu.edu.sg/sis_research/11035/">Hybrid Learning and Optimization Methods for Solving Capacitated Vehicle Routing Problem</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="publication-year" aria-labelledby="year-2025" data-publication-year="2025">
+        <h2 id="year-2025">2025</h2>
+        <ul class="publication-list">
+          <li id="depth-one" data-authors="lee lau">
+            <p class="publication-meta">Preprint · November</p>
+            <h3><a href="https://arxiv.org/abs/2511.10756">Understanding the Nature of Depth-1 Equivariant Quantum Circuit</a></h3>
+            <p class="authors">Jonathan Teo, Xin Wei Lee and Hoong Chuin Lau</p>
+          </li>
+          <li id="cross-size-transfer" data-authors="sharma lau">
+            <p class="publication-meta">Preprint · October</p>
+            <h3><a href="https://arxiv.org/abs/2510.14533">Diagnosing Simulation and Hardware Barriers to Cross-Size Transfer in Equivariant Quantum Reinforcement Learning</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="slack-free-qubo" data-authors="lee lau">
+            <p class="publication-meta">IEEE Quantum Week</p>
+            <h3><a href="https://doi.org/10.1109/QCE65121.2025.00231">Implementing Slack-Free Custom Penalty Function for QUBO on Gate-Based Quantum Computers</a></h3>
+            <p class="authors">Xin Wei Lee and Hoong Chuin Lau</p>
+          </li>
+          <li id="varqite" data-authors="lee lau">
+            <p class="publication-meta">IEEE Quantum Week</p>
+            <h3><a href="https://arxiv.org/abs/2504.12607">Solving Constrained Combinatorial Optimization Problems with Variational Quantum Imaginary Time Evolution</a></h3>
+            <p class="authors">Xin Wei Lee and Hoong Chuin Lau</p>
+          </li>
+          <li id="weighted-qite-vqe" data-authors="lee">
+            <p class="publication-meta">IEEE Quantum Week</p>
+            <h3><a href="https://arxiv.org/abs/2504.10651">An Adaptive Weighted QITE-VQE Algorithm for Combinatorial Optimization Problems</a></h3>
+            <p class="authors">Ningyi Xie, Xinwei Lee, Tiejin Chen, Yoshiyuki Saito, Nobuyoshi Asai and Dongsheng Cai</p>
+          </li>
+          <li id="cutting-slack" data-authors="sharma lau">
+            <p class="publication-meta">Preprint · July</p>
+            <h3><a href="https://arxiv.org/abs/2507.12159">Cutting Slack: Quantum Optimization with Slack-Free Methods for Combinatorial Benchmarks</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="adaptive-graph-shrinking" data-authors="sharma lau">
+            <p class="publication-meta">Preprint · June</p>
+            <h3><a href="https://arxiv.org/abs/2506.14250">Adaptive Graph Shrinking for Quantum Optimization of Constrained Combinatorial Problems</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="comparative-benchmark" data-authors="sharma lau">
+            <p class="publication-meta">Preprint · March</p>
+            <h3><a href="https://arxiv.org/abs/2503.12121">A Comparative Study of Quantum Optimization Techniques for Solving Combinatorial Optimization Benchmark Problems</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="publication-year" aria-labelledby="year-2024" data-publication-year="2024">
+        <h2 id="year-2024">2024</h2>
+        <ul class="publication-list">
+          <li id="quantum-q-learning" data-authors="lee">
+            <p class="publication-meta">IEEE MCSoC · December</p>
+            <h3><a href="https://doi.org/10.1109/MCSoC64144.2024.00086">A Quantum Q-Learning Model for the Capacitated Vehicle Routing Problem</a></h3>
+            <p class="authors">Jiahua Xu, Ningyi Xie, Xinwei Lee, Yoshiyuki Saito, Nobuyoshi Asai and Dongsheng Cai</p>
+          </li>
+          <li id="feed-forward-pec" data-authors="lee">
+            <p class="publication-meta">IEEE MCSoC · December</p>
+            <h3><a href="https://arxiv.org/abs/2405.01833">Feed-Forward Probabilistic Error Cancellation with Noisy Recovery Gates</a></h3>
+            <p class="authors">Leo Kurosawa, Yoshiyuki Saito, Xinwei Lee, Xinjian Yan, Ningyi Xie, Dongsheng Cai, Jungpil Shin and Nobuyoshi Asai</p>
+          </li>
+          <li id="knapsack-relaxation" data-authors="sharma lau">
+            <p class="publication-meta">IEEE Quantum Week · September</p>
+            <h3><a href="https://research.ibm.com/publications/quantum-relaxation-for-solving-multiple-knapsack-problems">Quantum Relaxation for Solving Multiple Knapsack Problems</a></h3>
+            <p class="authors">Monit Sharma, Yan Jin, Hoong Chuin Lau and Rudy Raymond</p>
+          </li>
+          <li id="newsvendor" data-authors="sharma lau">
+            <p class="publication-meta">IEEE Quantum Week · September</p>
+            <h3><a href="https://arxiv.org/abs/2403.17389">Quantum-Enhanced Simulation-Based Optimization for Newsvendor Problems</a></h3>
+            <p class="authors">Monit Sharma, Hoong Chuin Lau and Rudy Raymond</p>
+          </li>
+          <li id="quantum-monte-carlo" data-authors="sharma lau">
+            <p class="publication-meta">Preprint · September</p>
+            <h3><a href="https://arxiv.org/abs/2409.07183">Quantum Monte Carlo methods for Newsvendor problem with Multiple Unreliable Suppliers</a></h3>
+            <p class="authors">Monit Sharma and Hoong Chuin Lau</p>
+          </li>
+          <li id="feasible-routing" data-authors="lee lau">
+            <p class="publication-meta">Quantum Information Processing · July</p>
+            <h3><a href="https://doi.org/10.1007/s11128-024-04497-5">A feasibility-preserved quantum approximate solver for the capacitated vehicle routing problem</a></h3>
+            <p class="authors">Ningyi Xie, Xinwei Lee, Dongsheng Cai, Yoshiyuki Saito, Nobuyoshi Asai and Hoong Chuin Lau</p>
+          </li>
+        </ul>
+      </section>
+
+      <a class="section-link" href="https://github.com/SMU-Quantum#research">Research publications and code on GitHub</a>
     </div>
   </main>
 

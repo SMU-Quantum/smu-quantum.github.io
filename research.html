@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research areas at SMU Quantum include risk and resilience, adaptive optimisation and quantum hardware benchmarking.">
+  <meta name="description" content="Explore SMU Quantum’s work in optimisation, machine learning, error mitigation, risk modelling and fault-tolerant quantum algorithms.">
   <meta name="theme-color" content="#141c52">
   <title>Research | SMU Quantum</title>
   <link rel="stylesheet" href="styles.css">
@@ -25,7 +25,7 @@
           <li><a href="publications.html">Publications</a></li>
           <li><a href="research.html" aria-current="page">Research</a></li>
           <li><a href="people.html">People</a></li>
-          <li><a href="software.html">Software</a></li>
+          <li><a href="news.html">News</a></li>
         </ul>
       </nav>
     </div>
@@ -41,25 +41,69 @@
         <section aria-labelledby="risk-title">
           <h2 id="risk-title">Risk and resilience</h2>
           <div>
-            <p>We model how disruptions interact and evaluate responses such as changing inventory levels, diversifying routes and expanding storage. Our compound-disruptions report examines how to assess rare events in semiconductor supply chains, disaster bonds and inventory planning.</p>
-            <p class="contact"><a href="publications.html#whitepaper">Compound-disruptions whitepaper</a> · <a href="publications.html#maritime">Maritime energy security paper</a></p>
+            <p>We use quantum sampling and amplitude estimation to study rare events in supply chains, disaster bonds and inventory planning. Classical optimisation translates those scenarios into decisions such as how much stock to hold and how to reroute shipments.</p>
+            <ul class="related-links">
+              <li><a href="publications.html#whitepaper">Compound-disruptions whitepaper</a></li>
+              <li><a href="publications.html#newsvendor">Quantum estimation for inventory planning</a></li>
+              <li><a href="publications.html#maritime">Maritime energy security</a></li>
+            </ul>
+          </div>
+        </section>
+        <section aria-labelledby="algorithms-title">
+          <h2 id="algorithms-title">Constrained quantum optimisation</h2>
+          <div>
+            <p>We study how to encode constraints such as vehicle capacities and knapsack limits in quantum circuits. Our work includes custom penalties that avoid extra slack qubits, circuits that preserve feasibility, and variational imaginary-time evolution as an alternative to QAOA.</p>
+            <ul class="related-links">
+              <li><a href="publications.html#penalty-qaoa">Custom-penalty QAOA</a></li>
+              <li><a href="publications.html#varqite">Variational imaginary-time evolution</a></li>
+              <li><a href="publications.html#feasible-routing">Feasibility-preserving vehicle routing</a></li>
+            </ul>
           </div>
         </section>
         <section aria-labelledby="adaptive-title">
-          <h2 id="adaptive-title">Adaptive optimisation</h2>
+          <h2 id="adaptive-title">AI for hybrid solvers</h2>
           <div>
-            <p>We use learning to adapt penalty parameters, decompose large problems and decide how to allocate work between quantum and classical solvers. For example, AutoQResearch tests whether a language model can improve a solver’s configuration on graph and vehicle-routing problems.</p>
-            <p class="contact"><a href="publications.html#survey">Beyond QAOA survey</a> · <a href="publications.html#autoqresearch">AutoQResearch paper</a></p>
+            <p>We use learning to tune penalties, reduce problem size and allocate work between quantum and classical solvers. AutoQResearch uses a language model to propose solver policies, then tests them on graph and vehicle-routing problems under a fixed evaluation protocol.</p>
+            <ul class="related-links">
+              <li><a href="publications.html#survey">Beyond QAOA survey</a></li>
+              <li><a href="publications.html#autoqresearch">AutoQResearch</a></li>
+              <li><a href="publications.html#learning-graph-shrinking">Learning-based graph shrinking</a></li>
+            </ul>
+          </div>
+        </section>
+        <section aria-labelledby="learning-title">
+          <h2 id="learning-title">Quantum reinforcement learning</h2>
+          <div>
+            <p>We study whether quantum circuits that respect problem symmetries can learn routing policies on small instances and transfer them to larger ones. Our experiments examine when that idea works and how simulation cost, sampling and hardware noise limit transfer.</p>
+            <ul class="related-links">
+              <li><a href="publications.html#depth-one">Depth-1 equivariant circuits</a></li>
+              <li><a href="publications.html#cross-size-transfer">Limits of cross-size transfer</a></li>
+            </ul>
           </div>
         </section>
         <section aria-labelledby="hardware-title">
-          <h2 id="hardware-title">Quantum hardware and benchmarking</h2>
+          <h2 id="hardware-title">Hardware benchmarking and error mitigation</h2>
           <div>
-            <p>We study how noise, compilation and qubit limits affect the solutions we get from real devices. Our hardware benchmark compares several methods on IBM Heron processors and tracks how circuit size and noise affect performance.</p>
-            <p class="contact"><a href="publications.html#hardware">Hardware benchmarking paper</a> · <a href="software.html#benchmarks">Benchmark instances</a></p>
+            <p>We benchmark optimisation methods on real quantum processors and track how compilation and noise affect the solutions. We also study ways to reduce the effect of noise, including light-cone cancellation, probabilistic error cancellation and virtual distillation.</p>
+            <ul class="related-links">
+              <li><a href="publications.html#hardware">Hardware benchmarking</a></li>
+              <li><a href="publications.html#light-cone">Light-cone cancellation</a></li>
+              <li><a href="publications.html#virtual-distillation">Virtual distillation bounds</a></li>
+            </ul>
+          </div>
+        </section>
+        <section aria-labelledby="resources-title">
+          <h2 id="resources-title">Fault-tolerant resource estimates</h2>
+          <div>
+            <p>We estimate the resources quantum algorithms would need on fault-tolerant systems. Current projects examine the arithmetic cost of derivative pricing and the gate counts of quantum factoring.</p>
+            <ul class="related-links">
+              <li><a href="publications.html#derivative-pricing">Quantum derivative pricing</a></li>
+              <li><a href="publications.html#resource-estimates">Resource estimates for quantum factoring</a></li>
+            </ul>
           </div>
         </section>
       </div>
+      <a class="section-link" href="software.html">Research code, benchmarks and workshop notebooks</a>
     </div>
   </main>
 
