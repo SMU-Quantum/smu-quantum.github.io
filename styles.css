@@ -645,6 +645,21 @@ section + section > .people-heading { margin-top: clamp(2rem, 4vw, 3rem); }
 }
 
 .person p { margin-top: 0.35rem; color: var(--muted); max-width: 60ch; }
+
+.person-lead {
+  display: grid;
+  grid-template-columns: clamp(11rem, 30vw, 22rem) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(0.85rem, 3vw, 1.75rem);
+}
+
+.person-lead-portrait {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+}
+
 .person-lead h3 { font-size: clamp(1.6rem, 2.6vw, 2rem); }
 .person-lead p:first-of-type { color: var(--ink); font-weight: 600; }
 
@@ -695,6 +710,6 @@ section + section > .people-heading { margin-top: clamp(2rem, 4vw, 3rem); }
 .research-topics > section { scroll-margin-top: 1rem; }
 
 @media (max-width: 38rem) {
-  .people-grid { grid-template-columns: minmax(0, 1fr); }
+  .person-lead, .people-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
