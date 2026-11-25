@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Meet the SMU Quantum team and contact Prof. Hoong Chuin Lau about research collaborations.">
+  <meta name="description" content="Meet the SMU Quantum team and explore its research collaboration network.">
   <meta name="theme-color" content="#141c52">
   <title>People | SMU Quantum</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400&amp;family=Oswald:wght@400;500;600&amp;display=swap">
   <link rel="stylesheet" href="styles.css?v=52f2ac3000">
+  <link rel="stylesheet" href="collaborators.css?v=3">
+  <script src="collaborators.js?v=4" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -76,6 +78,53 @@
             </ul>
           </article>
         </div>
+      </section>
+
+      <section class="collaboration-section" id="collaborators" aria-labelledby="collaborators-title">
+        <h2 id="collaborators-title">Collaboration network</h2>
+        <p class="collaboration-intro">Explore the people and publications that connect SMU Quantum.</p>
+        <div class="network-explorer" id="collaboration-network" hidden>
+          <div class="network-toolbar">
+            <div class="network-search" role="search" aria-label="Find an author">
+              <label class="network-visually-hidden" for="network-query">Find an author</label>
+              <span class="network-search-icon" aria-hidden="true"></span>
+              <input type="search" id="network-query" placeholder="Find an author…" autocomplete="off" aria-controls="network-results">
+              <div class="network-results" id="network-results" hidden></div>
+            </div>
+            <div class="network-year">
+              <label for="network-year">Publication year</label>
+              <select id="network-year"><option value="">All years</option></select>
+            </div>
+          </div>
+          <div class="network-workspace">
+            <div class="network-figure">
+              <p class="network-visually-hidden" id="network-keyboard-help">Use the arrow keys to pan the map or Home to fit it to the view. Focus an author and use Shift with the arrow keys to move them.</p>
+              <div class="network-plot" id="collaboration-plot" role="group" aria-label="Co-authorship map" aria-describedby="network-keyboard-help" tabindex="0">
+                <canvas aria-hidden="true"></canvas>
+                <div class="network-controls" role="group" aria-label="Map controls">
+                  <button type="button" id="network-zoom-in" aria-label="Zoom in" title="Zoom in"><span aria-hidden="true">+</span></button>
+                  <button type="button" id="network-zoom-out" aria-label="Zoom out" title="Zoom out"><span aria-hidden="true">−</span></button>
+                  <button type="button" id="network-fit" aria-label="Fit network to view" title="Fit network to view"><span class="network-fit-icon" aria-hidden="true"></span></button>
+                </div>
+              </div>
+              <div class="network-map-footer">
+                <ul class="network-legend" aria-label="Map legend">
+                  <li><span class="network-legend-member" aria-hidden="true"></span>SMU Quantum</li>
+                  <li><span class="network-legend-author" aria-hidden="true"></span>Co-author</li>
+                  <li><span class="network-legend-line" aria-hidden="true"></span>Shared work</li>
+                </ul>
+                <div class="network-map-actions">
+                  <span class="network-map-hint" id="network-map-hint">Drag authors to move them</span>
+                  <button class="network-layout-reset" id="network-layout-reset" type="button" hidden>Reset layout</button>
+                  <a class="network-detail-link" id="network-detail-link" href="#collaboration-details" hidden>View author details</a>
+                </div>
+              </div>
+            </div>
+            <div id="collaboration-details" class="network-details" role="region" aria-label="Network details" tabindex="-1"></div>
+          </div>
+          <p id="network-announcement" class="network-visually-hidden" role="status"></p>
+        </div>
+        <p class="collaboration-fallback" id="collaboration-fallback">See the bylines on the <a href="publications.html">publications page</a> for the group’s co-authors.</p>
       </section>
 
       <aside class="contact-panel" aria-labelledby="contact-title">
